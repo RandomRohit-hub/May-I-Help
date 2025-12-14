@@ -1,0 +1,162 @@
+PlayMetrics
+
+Innovation Team
+
+SIH 2025
+CONNECTION BEYOND LIMITS
+Multi Mode
+Tactical Tracker
+
+Advanced communication system with seamless failover across multiple networks for mission-critical operations.
+
+Download App
+→
+Documentation
+↗
+Why Choose Our System
+
+Built for reliability in the most demanding environments with cutting-edge technology
+
+🌐
+Multi-Network Support
+
+Seamlessly switch between LoRa, GSM, and Satellite networks based on availability and signal strength.
+
+⚡
+Instant Failover
+
+Automatic network switching ensures continuous connectivity even in remote locations.
+
+🔒
+Military-Grade Security
+
+End-to-end encryption protects all communications and data transfers.
+
+Secure • Reliable • Mission-Ready
+
+MMTT SYSTEM
+Seamless two-way radio
+
+Crystal-clear field communication over VHF/UHF networks. Noise suppression, encrypted channels, and reliability under any condition.
+
+MMTT SYSTEM
+Multi-network auto-switch
+
+Zero-interruption switching between radio, GSM, and satellite — ensuring teams stay connected under every scenario.
+
+MMTT SYSTEM
+Built for the battlefield
+
+Designed to survive dust, shock, signal loss, and long deployments, while maintaining mission-ready performance.
+
+STEP 1
+
+Radio mode
+
+STEP 2
+
+GSM mode
+
+STEP 3
+
+Satellite fallback
+
+Live map
+Battery
+Network
+SOS
+Geofence
+Replay
+Dashboard
+Alerts
+
+ZONE 1
+
+Field
+
+For Soldiers
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+ZONE 2
+
+HQ
+
+Command Ready
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+ZONE 3
+
+BSF
+
+Force-wide Impact
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+↻
+DRAG TO ROTATE
+Spin the sphere & pause to spotlight a member.
+⇆
+
+Drag anywhere on the sphere to explore your core team.
+
+CORE TEAM
+Siddhant
+Gupta
+
+Crafting seamless digital experiences and guiding the team toward cleaner, smarter engineering.
+
+NOW EXPLORING
+
+Siddhant Gupta
+
+Live profile
+ROLE IN THE TEAM
+
+Software Team Lead – Web Developer
+
+CONNECT & FOLLOW
+One-tap links
+Jump straight into their world
+Check out their work, journey & highlights.
+
+MULTI-MODE TACTICAL TRACKER
+
+Ready to modernise
+field comms?
+
+One device, three networks, real-time situational awareness from field to HQ.
+
+Talk to us
+[COMMS_DATA]
+Mission-critical ready
+MMTT — Multi-Mode Tactical Tracker
+
+Seamless handover between radio, GSM, and satellite so teams stay connected — whether on patrol, at HQ, or across the border.
+
+[LOC] HQ_Ops
+
+[MAIL]
+teamplaymetrics@gmail.com
+
+[FREQ]
++91-626321XXXX
+
+[NAV_SYSTEM]
+>
+About
+>
+Gallery
+>
+Documentation
+[SYNC_UPLINK]
+
+Built for Smart India Hackathon — defence-grade comms for the next generation of forces.
+
+SYSTEM STATUS: ONLINE
+
+© 2025 MMTT Systems. All rights reserved.
+
+Privacy
+Terms
