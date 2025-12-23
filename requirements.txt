@@ -1,23 +1,24 @@
-# Core backend
+
 fastapi
 uvicorn
 
-# Website scraping
+
 requests
 beautifulsoup4
 tqdm
 
-# LangChain text splitters (HTML header-based splitting)
+
 langchain-text-splitters
 
-# Embeddings (ML)
+
 sentence-transformers
 scikit-learn
 numpy
 
-# Vector database
+
 pinecone-client
 
-# Environment variable 
+
 python-dotenv
+
 
