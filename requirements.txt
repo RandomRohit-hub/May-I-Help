@@ -18,5 +18,6 @@ numpy
 # Vector database
 pinecone-client
 
-# Environment variable support
+# Environment variable 
 python-dotenv
+
