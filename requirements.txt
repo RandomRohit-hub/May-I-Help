@@ -1,24 +1,14 @@
-
 fastapi
 uvicorn
-
-
 requests
 beautifulsoup4
 tqdm
-
-
 langchain-text-splitters
-
-
 sentence-transformers
 scikit-learn
 numpy
-
-
 pinecone-client
-
-
 python-dotenv
+
 
 
