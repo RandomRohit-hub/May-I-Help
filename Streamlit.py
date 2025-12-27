@@ -3,11 +3,14 @@ import streamlit as st
 from pinecone import Pinecone
 from groq import Groq
 from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
 
-# ADD YOUR API KEYS HERE
+# Load environment variables from .env file
+load_dotenv()
 
-PINECONE_API_KEY = ""
-GROQ_API_KEY = ""
+# Get API keys from environment variables
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 INDEX_NAME = "mayihelp"
 NAMESPACE = "rufus-data"
@@ -18,6 +21,7 @@ GROQ_MODEL = "llama-3.1-8b-instant"
 
 @st.cache_resource
 def init_clients():
+    """Initialize Pinecone and Groq clients"""
     try:
         # Initialize Pinecone with timeout
         pc = Pinecone(api_key=PINECONE_API_KEY)
@@ -36,6 +40,7 @@ def init_clients():
     except Exception as e:
         raise Exception(f"Initialization failed: {str(e)}")
 
+
 # RAG Prompt Template
 rag_prompt = ChatPromptTemplate.from_messages([
     (
@@ -50,6 +55,7 @@ rag_prompt = ChatPromptTemplate.from_messages([
         "Context:\n{context}\n\nQuestion:\n{question}"
     )
 ])
+
 
 def retrieve_context(pc, index, query, top_k=TOP_K):
     """Retrieve relevant context from Pinecone"""
@@ -70,6 +76,7 @@ def retrieve_context(pc, index, query, top_k=TOP_K):
         return [m["metadata"]["text"] for m in res["matches"]]
     except Exception as e:
         raise Exception(f"Retrieval error: {str(e)}")
+
 
 def ask_groq(groq_client, context, question):
     """Query Groq LLM with context"""
@@ -98,11 +105,13 @@ def ask_groq(groq_client, context, question):
     except Exception as e:
         raise Exception(f"Groq API error: {str(e)}")
 
+
 def ask_website(pc, index, groq_client, question):
     """Main RAG pipeline"""
     retrieved_chunks = retrieve_context(pc, index, question)
     context = "\n\n".join(retrieved_chunks)
     return ask_groq(groq_client, context, question)
+
 
 # Streamlit UI
 def main():
@@ -116,15 +125,20 @@ def main():
     st.markdown("Ask questions about the Multi-Mode Tactical Tracker project!")
 
     # Check if API keys are set
-    if PINECONE_API_KEY == "your_pinecone_api_key_here" or GROQ_API_KEY == "your_groq_api_key_here":
-        st.error("⚠️ Please add your API keys at the top of the rag_streamlit_app.py file!")
+    if not PINECONE_API_KEY or not GROQ_API_KEY:
+        st.error("⚠️ API keys not found! Please configure your .env file.")
         st.info("""
         **To fix this:**
-        1. Open `rag_streamlit_app.py` in a text editor
-        2. Find lines 10-11 at the top
-        3. Replace `"your_pinecone_api_key_here"` with your actual Pinecone API key
-        4. Replace `"your_groq_api_key_here"` with your actual Groq API key
-        5. Save the file and refresh this page
+        1. Create a `.env` file in the same directory as this script
+        2. Add the following lines to the `.env` file:
+        ```
+        PINECONE_API_KEY=your_actual_pinecone_api_key
+        GROQ_API_KEY=your_actual_groq_api_key
+        ```
+        3. Replace the values with your actual API keys
+        4. Save the file and refresh this page
+        
+        **Note:** Never commit the .env file to version control!
         """)
         return
 
@@ -242,6 +256,7 @@ Top K: {TOP_K}
     if st.sidebar.button("Clear Chat History"):
         st.session_state.messages = []
         st.rerun()
+
 
 if __name__ == "__main__":
     main()
