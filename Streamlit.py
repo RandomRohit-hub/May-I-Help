@@ -23,11 +23,13 @@ GROQ_MODEL = "llama-3.1-8b-instant"
 def init_clients():
     """Initialize Pinecone and Groq clients"""
     try:
-        # Initialize Pinecone with timeout
+        # Initialize Pinecone (version 5.x syntax)
         pc = Pinecone(api_key=PINECONE_API_KEY)
         
         # Check if index exists
-        available_indexes = pc.list_indexes().names()
+        index_list = pc.list_indexes()
+        available_indexes = [index.name for index in index_list]
+        
         if INDEX_NAME not in available_indexes:
             raise ValueError(f"Index '{INDEX_NAME}' not found. Available indexes: {available_indexes}")
         
