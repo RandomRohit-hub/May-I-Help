@@ -1,107 +1,170 @@
-import asyncio
-import sys
+import os
+import streamlit as st
+from pinecone import Pinecone
+from groq import Groq
+from langchain_core.prompts import ChatPromptTemplate
 
-# =================================================
-# WINDOWS EVENT LOOP FIX (MANDATORY)
-# =================================================
-if sys.platform.startswith("win"):
-    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+# Configuration
+INDEX_NAME = "mayihelp"
+NAMESPACE = "rufus-data"
+TOP_K = 5
+MAX_CONTEXT_CHARS = 8000
+GROQ_MODEL = "llama-3.1-8b-instant"
 
-from playwright.async_api import async_playwright, TimeoutError
-from urllib.parse import urljoin, urlparse
+# Initialize clients
+@st.cache_resource
+def init_clients():
+    # Try to get API keys from Streamlit secrets first, then environment variables
+    pinecone_key = st.secrets.get("PINECONE_API_KEY") if hasattr(st, 'secrets') else os.getenv("PINECONE_API_KEY")
+    groq_key = st.secrets.get("GROQ_API_KEY") if hasattr(st, 'secrets') else os.getenv("GROQ_API_KEY")
+    
+    if not pinecone_key:
+        raise ValueError("PINECONE_API_KEY not found")
+    if not groq_key:
+        raise ValueError("GROQ_API_KEY not found")
+    
+    pc = Pinecone(api_key=pinecone_key)
+    index = pc.Index(INDEX_NAME)
+    groq_client = Groq(api_key=groq_key)
+    return pc, index, groq_client
 
-URLS = [
-    "https://www.playmetrics.site/",
-    "https://www.playmetrics.site/docs",
-    "https://www.playmetrics.site/about",
-]
+# RAG Prompt Template
+rag_prompt = ChatPromptTemplate.from_messages([
+    (
+        "system",
+        "You are a website assistant. "
+        "Answer ONLY using the provided context retrieved from the vector database. "
+        "If the answer is not found in the context, say exactly: "
+        "'Not related to project or not asked properly.'"
+    ),
+    (
+        "human",
+        "Context:\n{context}\n\nQuestion:\n{question}"
+    )
+])
 
-async def scrape_site():
-    print("🚀 Scraper started", flush=True)
+def retrieve_context(pc, index, query, top_k=TOP_K):
+    """Retrieve relevant context from Pinecone"""
+    query_embedding = pc.inference.embed(
+        model="llama-text-embed-v2",
+        inputs=[query],
+        parameters={"input_type": "query"}
+    )[0]["values"]
 
-    all_links = set()
-    all_text_blocks = []
+    res = index.query(
+        vector=query_embedding,
+        top_k=top_k,
+        include_metadata=True,
+        namespace=NAMESPACE
+    )
 
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(
-            headless=False,   # visible for debugging
-            slow_mo=30
-        )
+    return [m["metadata"]["text"] for m in res["matches"]]
 
-        context = await browser.new_context()
+def ask_groq(groq_client, context, question):
+    """Query Groq LLM with context"""
+    messages = rag_prompt.format_messages(
+        context=context[:MAX_CONTEXT_CHARS],
+        question=question
+    )
 
-        for url in URLS:
-            print(f"\n➡️ Visiting: {url}", flush=True)
+    groq_messages = []
+    for m in messages:
+        role = "user" if m.type == "human" else "system"
+        groq_messages.append({
+            "role": role,
+            "content": m.content
+        })
 
-            # ALWAYS create a fresh page per URL
-            page = await context.new_page()
+    response = groq_client.chat.completions.create(
+        model=GROQ_MODEL,
+        messages=groq_messages,
+        temperature=0
+    )
 
+    return response.choices[0].message.content
+
+def ask_website(pc, index, groq_client, question):
+    """Main RAG pipeline"""
+    retrieved_chunks = retrieve_context(pc, index, question)
+    context = "\n\n".join(retrieved_chunks)
+    return ask_groq(groq_client, context, question)
+
+# Streamlit UI
+def main():
+    st.set_page_config(
+        page_title="MMTT Website Assistant",
+        page_icon="🤖",
+        layout="wide"
+    )
+
+    st.title("🤖 MMTT Website Assistant")
+    st.markdown("Ask questions about the Multi-Mode Tactical Tracker project!")
+
+    # Initialize clients
+    try:
+        pc, index, groq_client = init_clients()
+        
+        # Display connection status
+        with st.sidebar:
+            st.success("✅ Connected to Pinecone")
+            st.success("✅ Connected to Groq")
+            
+            st.markdown("---")
+            st.markdown("### About")
+            st.info(
+                "This assistant uses RAG (Retrieval Augmented Generation) "
+                "to answer questions about the MMTT project based on "
+                "website content and documentation."
+            )
+            
+            st.markdown("---")
+            st.markdown("### Index Stats")
             try:
-                await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-
-                # Wait for visible content instead of fixed timeout
-                await page.wait_for_selector("body", timeout=15000)
-
-                text = await page.inner_text("body")
-
-                all_text_blocks.append(
-                    f"""
-==============================
-SOURCE URL:
-{url}
-==============================
-
-{text}
-"""
-                )
-
-                anchors = await page.query_selector_all("a")
-                for a in anchors:
-                    href = await a.get_attribute("href")
-                    if not href:
-                        continue
-
-                    full_url = urljoin(url, href)
-                    parsed = urlparse(full_url)
-
-                    if parsed.scheme in ["http", "https"]:
-                        all_links.add(full_url.split("#")[0])
-
-                print("✅ Page scraped successfully", flush=True)
-
-            except TimeoutError:
-                print(f"⚠️ Timeout while loading {url}", flush=True)
-
+                stats = index.describe_index_stats()
+                st.json({
+                    "Total Vectors": stats.get('total_vector_count', 0),
+                    "Namespace Vectors": stats.get('namespaces', {}).get(NAMESPACE, {}).get('vector_count', 0)
+                })
             except Exception as e:
-                print(f"❌ Error on {url}: {e}", flush=True)
+                st.error(f"Could not fetch stats: {str(e)}")
 
-            finally:
-                # Close page safely
-                if not page.is_closed():
-                    await page.close()
+    except Exception as e:
+        st.error(f"❌ Error initializing clients: {str(e)}")
+        st.info("Please ensure PINECONE_API_KEY and GROQ_API_KEY are set in your environment variables.")
+        return
 
-        await browser.close()
+    # Chat interface
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
 
-    # =================================================
-    # Save output
-    # =================================================
-    joined_text = "\n\n".join(all_text_blocks)
-    joined_links = "\n".join(sorted(all_links))
+    # Display chat history
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
-    with open("playmetrics_full_dataset.txt", "w", encoding="utf-8") as f:
-        f.write("PLAYMETRICS WEBSITE – EXTRACTED DATASET\n")
-        f.write("=====================================\n\n")
-        f.write(joined_text)
-        f.write("\n\nLINKS\n-----\n")
-        f.write(joined_links)
+    # Chat input
+    if prompt := st.chat_input("Ask a question about MMTT..."):
+        # Add user message to chat
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
 
-    print("\n✅ Extraction completed", flush=True)
-    print(f"📄 Pages processed: {len(URLS)}", flush=True)
-    print(f"🔗 Unique links: {len(all_links)}", flush=True)
+        # Get assistant response
+        with st.chat_message("assistant"):
+            with st.spinner("Thinking..."):
+                try:
+                    response = ask_website(pc, index, groq_client, prompt)
+                    st.markdown(response)
+                    st.session_state.messages.append({"role": "assistant", "content": response})
+                except Exception as e:
+                    error_msg = f"Error: {str(e)}"
+                    st.error(error_msg)
+                    st.session_state.messages.append({"role": "assistant", "content": error_msg})
 
+    # Clear chat button
+    if st.sidebar.button("Clear Chat History"):
+        st.session_state.messages = []
+        st.rerun()
 
-# =================================================
-# ENTRY POINT
-# =================================================
 if __name__ == "__main__":
-    asyncio.run(scrape_site())
+    main()
