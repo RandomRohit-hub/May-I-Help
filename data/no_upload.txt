@@ -1,0 +1,185 @@
+MMTT
+VHF / UHF and GSM Hybrid Handheld Device
+Smart Monitoring and Tracking Transceiver
+
+(Place line-art device illustration in the same position as reference)
+
+MMTT
+User Manual
+
+Logos and Marks
+
+Hybrid Tracking
+Offline and Online Communication
+SOS Enabled
+IP-Rated Design
+
+Team PlayMetrics
+
+NOTICE
+
+Lightning and Environmental Safety
+
+Never operate the MMTT handheld device outdoors during thunderstorms or in high-risk lightning environments. The antenna and the user may form a conductive path that increases the risk of injury.
+
+If severe weather approaches, switch off the device, move to a safe enclosed area, and avoid elevated or open locations.
+
+Team PlayMetrics is not responsible for damage or injury caused by unsafe usage conditions.
+
+Introduction
+
+This manual describes the standard features and basic operation of the MMTT Hybrid Tracking Transceiver, developed by Team PlayMetrics for mission-critical communication and tracking.
+
+Advanced configuration options may be available through authorized configuration software and are not covered in this manual.
+
+Read this document fully before operating the device.
+
+Communication Coverage
+
+Under open terrain conditions, MMTT supports short-range RF communication, GSM-based long-range tracking, and offline fallback using RF or SMS.
+
+Actual performance depends on terrain, interference, and environmental conditions.
+
+Ingress Protection
+
+This device is designed for operation in harsh environments and conforms to industrial ingress protection standards suitable for outdoor and field use.
+
+GPS AND TRACKING NOTICE
+
+Integrated GNSS and Location Module
+
+The GNSS antenna is located beneath the top panel. Do not obstruct the top area during operation. GPS signal reception may be affected in tunnels, dense forest cover, underground areas, or metal-covered vehicles.
+
+MMTT supports hybrid tracking using GNSS as the primary method, GSM coordinates as a secondary method, and RF fallback for offline operation.
+
+REGULATORY AND COMPLIANCE
+
+Compliance Information
+
+This device complies with applicable RF emission and safety standards for professional and controlled environments.
+
+For Users in India
+
+Operation is permitted under the condition that the device does not cause harmful interference and must accept any interference received.
+
+The device is designed in accordance with Indian communication standards and spectrum regulations.
+
+RF SAFETY INFORMATION
+
+MMTT emits radio frequency energy during transmission.
+
+Maintain a minimum distance of 3 cm from the antenna while transmitting.
+Do not transmit continuously for more than a 50 percent duty cycle.
+Use only PlayMetrics-approved accessories.
+
+This device is intended for professional and controlled use only.
+
+SYMBOLS AND WARNINGS
+
+Danger indicates an immediate hazard.
+Warning indicates a possible risk of serious injury.
+Caution indicates a potential risk to the user or equipment.
+
+Follow all instructions carefully to prevent injury or device damage.
+
+HANDLING AND MAINTENANCE
+
+Do not open or modify the device.
+Keep the device away from excessive moisture.
+Use a dry cloth only for cleaning.
+Do not expose the unit to extreme heat.
+
+Unauthorized modifications will void the warranty.
+
+CONTENTS
+
+Accessories
+Device Overview
+Basic Operation
+Optional Modules
+Specifications
+
+ACCESSORIES
+
+Standard Accessories
+
+MMTT lithium-ion battery pack
+Charging dock
+Antenna
+Belt clip
+Hand strap
+User manual
+
+Installation Sections
+
+Antenna attachment
+Belt clip installation
+Battery pack handling
+Charging instructions
+
+All diagrams remain in the same positions as the original layout.
+
+DEVICE PARTS AND CONTROLS
+
+Front Panel
+
+Push-to-Talk button
+Menu key
+Navigation keys
+SOS button
+Programmable function keys
+
+Back Panel
+
+Battery lock
+Speaker
+Belt clip slot
+
+BASIC OPERATION
+
+Power On and Off
+
+Rotate the power knob clockwise to switch on the device.
+
+Volume Control
+
+Adjust volume gradually. Avoid using earphones during volume adjustment.
+
+Receiving
+
+Signal strength is displayed on the screen. LED indicators show active reception.
+
+Transmitting
+
+Press and hold the PTT button. Speak in a normal voice from a distance of approximately 5 cm.
+
+OPTIONS AND MODULES
+
+Speaker microphone
+Earphone microphone
+External mount clip
+Programming cable
+
+Accessory Port Instructions
+
+Ensure the accessory port cover is closed when not in use to maintain the protection rating.
+
+SPECIFICATIONS
+
+General
+
+Communication: RF and GSM hybrid
+Tracking: GNSS with offline RF fallback
+Operating voltage: 7.4 V DC
+Operating temperature: minus 20 degrees Celsius to plus 55 degrees Celsius
+Antenna impedance: 50 ohms
+
+Transmitter
+
+Multi-step RF power levels
+Analog and digital modulation
+
+Receiver
+
+High-sensitivity design
+Noise-optimized audio outpu

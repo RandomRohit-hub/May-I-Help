@@ -1,0 +1,442 @@
+
+--- https://www.playmetrics.site/ ---
+PlayMetrics
+
+Innovation Team
+
+SIH 2025
+CONNECTION BEYOND LIMITS
+Multi Mode
+Tactical Tracker
+
+Advanced communication system with seamless failover across multiple networks for mission-critical operations.
+
+Download App
+→
+Documentation
+↗
+Why Choose Our System
+
+Built for reliability in the most demanding environments with cutting-edge technology
+
+🌐
+Multi-Network Support
+
+Seamlessly switch between LoRa, GSM, and Satellite networks based on availability and signal strength.
+
+⚡
+Instant Failover
+
+Automatic network switching ensures continuous connectivity even in remote locations.
+
+🔒
+Military-Grade Security
+
+End-to-end encryption protects all communications and data transfers.
+
+Secure • Reliable • Mission-Ready
+
+MMTT SYSTEM
+Seamless two-way radio
+
+Crystal-clear field communication over VHF/UHF networks. Noise suppression, encrypted channels, and reliability under any condition.
+
+MMTT SYSTEM
+Multi-network auto-switch
+
+Zero-interruption switching between radio, GSM, and satellite — ensuring teams stay connected under every scenario.
+
+MMTT SYSTEM
+Built for the battlefield
+
+Designed to survive dust, shock, signal loss, and long deployments, while maintaining mission-ready performance.
+
+STEP 1
+
+Radio mode
+
+STEP 2
+
+GSM mode
+
+STEP 3
+
+Satellite fallback
+
+Live map
+Battery
+Network
+SOS
+Geofence
+Replay
+Dashboard
+Alerts
+
+ZONE 1
+
+Field
+
+For Soldiers
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+ZONE 2
+
+HQ
+
+Command Ready
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+ZONE 3
+
+BSF
+
+Force-wide Impact
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+↻
+DRAG TO ROTATE
+Spin the sphere & pause to spotlight a member.
+⇆
+
+Drag anywhere on the sphere to explore your core team.
+
+CORE TEAM
+Siddhant
+Gupta
+
+Crafting seamless digital experiences and guiding the team toward cleaner, smarter engineering.
+
+NOW EXPLORING
+
+Siddhant Gupta
+
+Live profile
+ROLE IN THE TEAM
+
+Software Team Lead – Web Developer
+
+CONNECT & FOLLOW
+One-tap links
+Jump straight into their world
+Check out their work, journey & highlights.
+
+MULTI-MODE TACTICAL TRACKER
+
+Ready to modernise
+field comms?
+
+One device, three networks, real-time situational awareness from field to HQ.
+
+Talk to us
+[COMMS_DATA]
+Mission-critical ready
+MMTT — Multi-Mode Tactical Tracker
+
+Seamless handover between radio, GSM, and satellite so teams stay connected — whether on patrol, at HQ, or across the border.
+
+[LOC] HQ_Ops
+
+[MAIL]
+teamplaymetrics@gmail.com
+
+[FREQ]
++91-626321XXXX
+
+[NAV_SYSTEM]
+>
+About
+>
+Gallery
+>
+Documentation
+[SYNC_UPLINK]
+
+Built for Smart India Hackathon — defence-grade comms for the next generation of forces.
+
+SYSTEM STATUS: ONLINE
+
+© 2025 MMTT Systems. All rights reserved.
+
+Privacy
+Terms
+
+--- https://www.playmetrics.site/docs ---
+MMTT Documentation
+
+Multi-Mode Tactical Tracker • SIH 2025
+
+SIH 2025
+DEFENSE & SECURITY
+
+ON THIS PAGE
+
+1. Executive Summary
+2. Project Rationale & BSF Applicability
+2.1 Rationale & Impact
+2.2 Project Scheduling
+3. Technical Specifications
+3.1 System Requirements
+3.2 Hardware & Software
+4. System Design & Connectivity
+4.1 Failover Logic
+4.2 Data Parameters
+5. Implementation & Conclusion
+5.1 Testing
+5.2 Conclusion
+5.3 Future Enhancements
+Docs/MMTT Overview
+MMTT: Multi-Mode Tactical Tracker (SIH 2025 Edition)
+
+Presented to: Border Security Force (BSF) & IIT Roorkee Panel
+
+PROBLEM FOCUS: BSF OPERATIONAL SAFETY & SITUATIONAL AWARENESS
+
+EXECUTIVE SUMMARY
+
+The Multi-Mode Tactical Tracker (MMTT) is an SIH 2025 solution designed to eliminate communication failures faced by BSF personnel during patrol and security operations. It integrates VHF, GSM, and Satellite technologies into a single smart device.
+
+INNOVATION
+
+Core innovation: intelligent, autonomous network switching, ensuring a BSF operative is never offline. A secure cloud dashboard offers real-time, centralized visibility for HQ commanders, filling critical gaps in conventional defense tracking systems.
+
+MMTT provides assured connectivity for mission-critical tasks, acting as a reliable, unified communication instrument for BSF operations in remote and challenging terrains.
+
+2. Project Rationale and BSF Applicability
+
+MMTT’s design is rooted in real BSF use-cases where terrain, weight, and communication reliability directly affect mission success and troop safety.
+
+2.1 Rationale & Operational Impact
+Section	Description	BSF Operational Impact
+Problem Identification	BSF often operates in varied border terrains (mountains, deserts) where single networks fail. Separate radio and satellite systems increase gear weight and complexity.	Mitigates communication loss in 'blind spots' near international borders, enhancing patrol security. Reduces load on field personnel.
+Need of the Project	To provide an always-on communication link with automatic failover, simplifying command-and-control for BSF.	Ensures Mission Success and Soldier Safety by guaranteeing continuous, real-time tracking for the Border Guarding Force (BGF).
+Objectives	Deliver a robust prototype integrating all three modes, featuring a live HQ dashboard, and implementing SOS/Geofencing specifically for restricted border zones.	Enhances Force Protection and enables immediate response to emergencies via the SOS feature.
+2.2 Project Scheduling (SIH Rapid Development Model)
+Phase	Duration	Description (SIH Relevance)
+Requirement Analysis	Week 1–2	Defined objectives based on BSF operational requirements.
+System Design	Week 3–4	Circuit design and communication protocol, focusing on power efficiency.
+Implementation	Week 5–8	Rapid prototype assembly and Embedded C code development for fast execution.
+Integration & Testing	Week 9–10	Rigorous testing of network switching latency and GPS accuracy in various environments.
+Monitoring App	Week 11–12	Developed a responsive, secure web/mobile dashboard for Command Center visualization.
+3. Technical Specifications and Hardware Focus
+3.1 System Requirements (BSF Grade)
+
+Designed for robustness and low-power consumption, optimized for long-duration BSF patrols in remote terrains:
+
+Positioning: GNSS for high precision.
+Communication: Tri-mode redundancy (VHF/GSM/SAT).
+Alerts: Immediate SOS and customizable geofencing for border violations/entry points.
+Hardware (Prototype Components)
+Microcontroller: Atmega328 (simplicity + low-power profile).
+Power: Lithium Battery 3.7V (×4) targeting extended operation.
+Design Goal: Future device to be compact, ruggedized, IP67 certified.
+Software & Tools
+Device Firmware: Embedded C (Arduino IDE), tuned for minimal latency.
+Database: Firebase / MongoDB for scalable, real-time HQ sync.
+Process Model: Iterative Model enabling rapid MVP delivery (VHF → GSM) for SIH demonstration.
+4. System Design and Connectivity Assurance
+4.1 Autonomous Failover Logic
+
+The core value for BSF is the autonomous failover logic that ensures the device always selects the best available communication link.
+
+Logic Flow (High Level)
+
+Start → Check VHF Signal (Proximity) → if available: Send via VHF (Low Power) → else: Check GSM Coverage → if available: Send via GSM → else: Send via Satellite (Last Resort) → Update HQ Dashboard.
+
+4.2 Data Parameters
+
+Key telemetry values transmitted from field devices to HQ:
+
+Parameter	Description	Significance for BSF
+MODE	Current network status (VHF/GSM/SAT).	Immediate display of operative's link reliability to HQ.
+RSSI	Received Signal Strength Indicator.	Used to trigger the automatic, predictive network switch before total signal loss.
+SOS_FLAG	Emergency signal (instant alert).	Triggers high-priority alert and location pin at Command Center.
+5. Implementation, Testing, and Conclusion
+5.1 Successful Testing (Field Condition Simulation)
+
+The prototype demonstrated seamless switching across simulated field conditions:
+
+Low Latency: Minimal delay during VHF ↔ GSM / Satellite transitions.
+Accuracy: GPS lock sustained during network changes.
+Reliability: SOS alerts routed via the best available link instantly.
+5.2 Conclusion (SIH 2025 Achievement)
+
+MMTT directly addresses BSF's need for uninterrupted, simplified communication in border environments. It offers a low-cost, high-impact solution that strengthens force coordination, situational awareness, and troop safety for critical missions.
+
+5.3 Future Enhancements (Post-SIH Roadmap)
+Integrate LoRa communication for ultra-low power, short-range mesh networking.
+Add AI-based anomaly detection to flag unusual troop movement and potential threats.
+Develop a fully ruggedized, wearable vest-mount form factor optimized for BSF field operators.
+
+--- https://www.playmetrics.site/about ---
+404
+
+Oops! Page not found
+
+Return to Home
+
+--- https://www.playmetrics.site/#Home ---
+PlayMetrics
+
+Innovation Team
+
+SIH 2025
+CONNECTION BEYOND LIMITS
+Multi Mode
+Tactical Tracker
+
+Advanced communication system with seamless failover across multiple networks for mission-critical operations.
+
+Download App
+→
+Documentation
+↗
+Why Choose Our System
+
+Built for reliability in the most demanding environments with cutting-edge technology
+
+🌐
+Multi-Network Support
+
+Seamlessly switch between LoRa, GSM, and Satellite networks based on availability and signal strength.
+
+⚡
+Instant Failover
+
+Automatic network switching ensures continuous connectivity even in remote locations.
+
+🔒
+Military-Grade Security
+
+End-to-end encryption protects all communications and data transfers.
+
+Secure • Reliable • Mission-Ready
+
+MMTT SYSTEM
+Seamless two-way radio
+
+Crystal-clear field communication over VHF/UHF networks. Noise suppression, encrypted channels, and reliability under any condition.
+
+MMTT SYSTEM
+Multi-network auto-switch
+
+Zero-interruption switching between radio, GSM, and satellite — ensuring teams stay connected under every scenario.
+
+MMTT SYSTEM
+Built for the battlefield
+
+Designed to survive dust, shock, signal loss, and long deployments, while maintaining mission-ready performance.
+
+STEP 1
+
+Radio mode
+
+STEP 2
+
+GSM mode
+
+STEP 3
+
+Satellite fallback
+
+Live map
+Battery
+Network
+SOS
+Geofence
+Replay
+Dashboard
+Alerts
+
+ZONE 1
+
+Field
+
+For Soldiers
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+ZONE 2
+
+HQ
+
+Command Ready
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+ZONE 3
+
+BSF
+
+Force-wide Impact
+
+Strategically optimized for deployment, command, and full-force coordination.
+
+↻
+DRAG TO ROTATE
+Spin the sphere & pause to spotlight a member.
+⇆
+
+Drag anywhere on the sphere to explore your core team.
+
+CORE TEAM
+Siddhant
+Gupta
+
+Crafting seamless digital experiences and guiding the team toward cleaner, smarter engineering.
+
+NOW EXPLORING
+
+Siddhant Gupta
+
+Live profile
+ROLE IN THE TEAM
+
+Software Team Lead – Web Developer
+
+CONNECT & FOLLOW
+One-tap links
+Jump straight into their world
+Check out their work, journey & highlights.
+
+MULTI-MODE TACTICAL TRACKER
+
+Ready to modernise
+field comms?
+
+One device, three networks, real-time situational awareness from field to HQ.
+
+Talk to us
+[COMMS_DATA]
+Mission-critical ready
+MMTT — Multi-Mode Tactical Tracker
+
+Seamless handover between radio, GSM, and satellite so teams stay connected — whether on patrol, at HQ, or across the border.
+
+[LOC] HQ_Ops
+
+[MAIL]
+teamplaymetrics@gmail.com
+
+[FREQ]
++91-626321XXXX
+
+[NAV_SYSTEM]
+>
+About
+>
+Gallery
+>
+Documentation
+[SYNC_UPLINK]
+
+Built for Smart India Hackathon — defence-grade comms for the next generation of forces.
+
+SYSTEM STATUS: ONLINE
+
+© 2025 MMTT Systems. All rights reserved.
+
+Privacy
+Terms

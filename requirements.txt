@@ -1,0 +1,10 @@
+streamlit
+pinecone-client
+groq
+langchain-core
+langchain-text-splitters
+playwright
+python-dotenv
+requests
+beautifulsoup4
+tqdm
