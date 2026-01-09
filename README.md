@@ -23,7 +23,7 @@ The **MMTT Website Assistant** is a RAG (Retrieval-Augmented Generation) applica
 1.  **Clone the repository**:
     ```bash
     git clone <repository-url>
-    cd RUFUS
+    
     ```
 
 2.  **Install dependencies**:
