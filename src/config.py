@@ -6,14 +6,13 @@ load_dotenv()
 class Config:
     # API Keys
     PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
     # Pinecone
     INDEX_NAME = "mayihelp"
     NAMESPACE = "rufus-data"
     
     # LLM
-    GROQ_MODEL = "llama-3.1-8b-instant"
+    OLLAMA_MODEL = "gemma2:2b"
     EMBEDDING_MODEL = "llama-text-embed-v2"
     
     # Text Processing
@@ -30,5 +29,3 @@ class Config:
     def validate(cls):
         if not cls.PINECONE_API_KEY:
             raise ValueError("PINECONE_API_KEY not found in environment variables.")
-        if not cls.GROQ_API_KEY:
-            raise ValueError("GROQ_API_KEY not found in environment variables.")

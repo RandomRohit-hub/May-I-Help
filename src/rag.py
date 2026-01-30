@@ -1,5 +1,5 @@
 from pinecone import Pinecone
-from groq import Groq
+import ollama
 from langchain_core.prompts import ChatPromptTemplate
 from src.config import Config
 
@@ -8,7 +8,7 @@ class RAGEngine:
         Config.validate()
         self.pc = Pinecone(api_key=Config.PINECONE_API_KEY)
         self.index = self.pc.Index(Config.INDEX_NAME)
-        self.groq_client = Groq(api_key=Config.GROQ_API_KEY)
+        # self.groq_client = Groq(api_key=Config.GROQ_API_KEY) # Removed Groq
         
         self.prompt_template = ChatPromptTemplate.from_messages([
             (
@@ -81,28 +81,18 @@ class RAGEngine:
                 seen_urls.add(url)
 
         # Prepare messages
-        # If we had chat history, we could append it here, but for now strictly following context is safer 
-        # to avoid hallucinations, though we can pass recent messages.
-        # For simplicity and robustness, we treat each query mostly independently but context-aware.
-        
         msg = self.prompt_template.format_messages(
             context=context_text[:Config.MAX_CONTEXT_CHARS],
             question=query
         )
         
-        groq_messages = []
+        ollama_messages = []
         for m in msg:
-            groq_messages.append({"role": "user" if m.type == "human" else "system", "content": m.content})
+            ollama_messages.append({"role": "user" if m.type == "human" else "system", "content": m.content})
 
         try:
-            chat_completion = self.groq_client.chat.completions.create(
-                model=Config.GROQ_MODEL,
-                messages=groq_messages,
-                temperature=0.1, # Low temperature for factual answers
-                max_tokens=1024
-            )
-            
-            response_text = chat_completion.choices[0].message.content
+            response = ollama.chat(model=Config.OLLAMA_MODEL, messages=ollama_messages)
+            response_text = response['message']['content']
             
             return {
                 "response": response_text,

@@ -40,17 +40,17 @@ def main():
     # Sidebar configuration
     with st.sidebar:
         st.header("Status")
-        if Config.PINECONE_API_KEY and Config.GROQ_API_KEY:
+        if Config.PINECONE_API_KEY:
             st.success("API Keys detected")
         else:
             st.error("Missing API Keys in .env")
-            st.info("Plese ensure .env file exists with PINECONE_API_KEY and GROQ_API_KEY")
+            st.info("Plese ensure .env file exists with PINECONE_API_KEY")
 
         st.markdown("---")
         st.markdown("### About")
         st.info(
             "This assistant extracts knowledge from the PlayMetrics website "
-            "and uses a Vector Database (Pinecone) + LLM (Groq/Llama3) to answer your questions."
+            "and uses a Vector Database (Pinecone) + Local LLM (Ollama/Gemma2:2b) to answer your questions."
         )
         if st.button("Clear History"):
             st.session_state.messages = []
