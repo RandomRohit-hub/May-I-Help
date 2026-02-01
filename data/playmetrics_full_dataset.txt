@@ -11,6 +11,148 @@ https://www.playmetrics.site/
 
 PlayMetrics
 
+MMTT (Multi-Mode Tactical Tracker)
+=================================
+
+1. Overview
+-----------
+MMTT (Multi-Mode Tactical Tracker) is an intelligent tracking and monitoring system designed to collect, analyze, and present tactical or operational data in real time. The system focuses on improving situational awareness, decision-making, and operational efficiency by combining multiple data sources into a unified platform.
+
+MMTT is built to support complex environments where tracking, analysis, and rapid response are critical.
+
+2. Where MMTT Is Used / Present
+-------------------------------
+MMTT is intended for use in environments that require continuous monitoring and tactical awareness, including:
+
+- Defense and security operations
+- Surveillance and monitoring systems
+- Tactical training simulations
+- Command and control centers
+- Research and analytics platforms
+- Smart monitoring systems (movement, events, assets)
+
+Public presentation / demos:
+- Presented at the **Smart India Hackathon (SIH) 2025** by **Team Play Mnatrics** at **IIT Roorkee** (demo, poster, and prototype).
+- Can be deployed as a web-based platform, integrated into internal systems, or used as a decision-support tool.
+
+3. Why MMTT Was Built
+--------------------
+MMTT was built to solve the following problems:
+
+- Fragmented data across multiple systems
+- Lack of real-time situational awareness
+- Difficulty in tracking multiple modes or entities simultaneously
+- Manual analysis being slow and error-prone
+- Poor accessibility of tactical insights for operators
+
+The goal was to create a **single intelligent system** that can:
+- Track multiple entities or modes at once
+- Provide real-time insights
+- Reduce human error
+- Improve response time
+- Make complex data easy to understand
+
+4. Core Objectives
+------------------
+- Centralize tactical data
+- Enable real-time monitoring
+- Support multiple tracking modes
+- Improve operational decision-making
+- Provide an intuitive user interface
+- Allow future scalability and AI integration
+
+5. Key Features
+---------------
+MMTT includes the following core features:
+
+- Multi-Mode Tracking  
+  Supports tracking across different modes such as locations, movements, events, or entities.
+
+- Real-Time Data Processing  
+  Continuously processes incoming data for up-to-date insights.
+
+- Intelligent Analysis  
+  Uses AI/ML models (where applicable) to identify patterns, anomalies, and trends.
+
+- Search and Query System  
+  Allows users to ask questions and retrieve relevant information quickly.
+
+- Centralized Dashboard  
+  Displays key metrics, alerts, and summaries in one place.
+
+- Scalable Architecture  
+  Designed to handle growing data volumes and users.
+
+- Secure Data Handling  
+  Ensures controlled access and data protection.
+
+6. Technical Architecture (High-Level)
+--------------------------------------
+MMTT typically consists of:
+
+- Data Sources  
+  Sensors, logs, documents, or external systems.
+
+- Processing Layer  
+  Handles ingestion, cleaning, and transformation of data.
+
+- Storage Layer  
+  Databases or vector stores for structured and unstructured data.
+
+- Intelligence Layer  
+  AI/ML models for analysis, prediction, and retrieval.
+
+- Application Layer  
+  Web-based UI for interaction and visualization.
+
+- API / Integration Layer  
+  Enables integration with external tools and systems.
+
+7. Role of AI in MMTT
+--------------------
+AI enhances MMTT by enabling:
+
+- Semantic search over documents and data
+- Natural language question answering
+- Pattern recognition and anomaly detection
+- Context-aware responses
+- Faster insights without manual analysis
+
+When combined with RAG (Retrieval-Augmented Generation), MMTT can answer questions strictly based on its data sources.
+
+8. Benefits of MMTT
+-------------------
+- Faster decision-making
+- Improved situational awareness
+- Reduced operational complexity
+- Better data utilization
+- Increased reliability and accuracy
+- Easy access to critical information
+
+9. Future Enhancements
+----------------------
+Planned or possible future improvements include:
+
+- Advanced predictive analytics
+- Integration with more real-time data sources
+- Enhanced visualization and dashboards
+- Multi-user collaboration
+- Role-based access control
+- Automated alerts and recommendations
+
+10. Project Credits & Event
+---------------------------
+- Developed and presented by **Team Play Mnatrics**.
+- Publicly showcased at **Smart India Hackathon (SIH) 2025**, **IIT Roorkee**.
+- Project contributors: Team Play Mnatrics (members, roles — include names here if you want to list them).
+- Contact / demo requests: reach out via the team’s registered contact at SIH 2025.
+
+11. Summary
+-----------
+MMTT (Multi-Mode Tactical Tracker) is a powerful, flexible, and intelligent system designed to track, analyze, and present tactical information in real time. It was built to address the challenges of fragmented data, slow analysis, and limited situational awareness, providing a unified platform that supports informed and timely decision-making. The project was presented at SIH 2025 by Team Play Mnatrics at IIT Roorkee.
+
+
+
 Innovation Team
 
 SIH 2025
@@ -475,3 +617,152 @@ https://www.instagram.com/team__playmetrics__sih?igsh=YmUxMnp1ODBqcWQ=
 https://www.playmetrics.site/
 https://www.playmetrics.site/docs
 https://x.com/Siddhar16032376
+
+
+
+
+
+
+
+
+
+
+MMTT (Multi-Mode Tactical Tracker)
+=================================
+
+1. Overview
+-----------
+MMTT (Multi-Mode Tactical Tracker) is an intelligent tracking and monitoring system designed to collect, analyze, and present tactical or operational data in real time. The system focuses on improving situational awareness, decision-making, and operational efficiency by combining multiple data sources into a unified platform.
+
+MMTT is built to support complex environments where tracking, analysis, and rapid response are critical.
+
+
+2. Where MMTT Is Used / Present
+-------------------------------
+MMTT is intended for use in environments that require continuous monitoring and tactical awareness, including:
+
+- Defense and security operations
+- Surveillance and monitoring systems
+- Tactical training simulations
+- Command and control centers
+- Research and analytics platforms
+- Smart monitoring systems (movement, events, assets)
+
+It can be deployed as a web-based platform, integrated into internal systems, or used as a decision-support tool.
+
+
+3. Why MMTT Was Built
+--------------------
+MMTT was built to solve the following problems:
+
+- Fragmented data across multiple systems
+- Lack of real-time situational awareness
+- Difficulty in tracking multiple modes or entities simultaneously
+- Manual analysis being slow and error-prone
+- Poor accessibility of tactical insights for operators
+
+The goal was to create a **single intelligent system** that can:
+- Track multiple entities or modes at once
+- Provide real-time insights
+- Reduce human error
+- Improve response time
+- Make complex data easy to understand
+
+
+4. Core Objectives
+------------------
+- Centralize tactical data
+- Enable real-time monitoring
+- Support multiple tracking modes
+- Improve operational decision-making
+- Provide an intuitive user interface
+- Allow future scalability and AI integration
+
+
+5. Key Features
+---------------
+MMTT includes the following core features:
+
+- Multi-Mode Tracking  
+  Supports tracking across different modes such as locations, movements, events, or entities.
+
+- Real-Time Data Processing  
+  Continuously processes incoming data for up-to-date insights.
+
+- Intelligent Analysis  
+  Uses AI/ML models (where applicable) to identify patterns, anomalies, and trends.
+
+- Search and Query System  
+  Allows users to ask questions and retrieve relevant information quickly.
+
+- Centralized Dashboard  
+  Displays key metrics, alerts, and summaries in one place.
+
+- Scalable Architecture  
+  Designed to handle growing data volumes and users.
+
+- Secure Data Handling  
+  Ensures controlled access and data protection.
+
+
+6. Technical Architecture (High-Level)
+--------------------------------------
+MMTT typically consists of:
+
+- Data Sources  
+  Sensors, logs, documents, or external systems.
+
+- Processing Layer  
+  Handles ingestion, cleaning, and transformation of data.
+
+- Storage Layer  
+  Databases or vector stores for structured and unstructured data.
+
+- Intelligence Layer  
+  AI/ML models for analysis, prediction, and retrieval.
+
+- Application Layer  
+  Web-based UI for interaction and visualization.
+
+- API / Integration Layer  
+  Enables integration with external tools and systems.
+
+
+7. Role of AI in MMTT
+--------------------
+AI enhances MMTT by enabling:
+
+- Semantic search over documents and data
+- Natural language question answering
+- Pattern recognition and anomaly detection
+- Context-aware responses
+- Faster insights without manual analysis
+
+When combined with RAG (Retrieval-Augmented Generation), MMTT can answer questions strictly based on its data sources.
+
+
+8. Benefits of MMTT
+-------------------
+- Faster decision-making
+- Improved situational awareness
+- Reduced operational complexity
+- Better data utilization
+- Increased reliability and accuracy
+- Easy access to critical information
+
+
+9. Future Enhancements
+----------------------
+Planned or possible future improvements include:
+
+- Advanced predictive analytics
+- Integration with more real-time data sources
+- Enhanced visualization and dashboards
+- Multi-user collaboration
+- Role-based access control
+- Automated alerts and recommendations
+
+
+10. Summary
+-----------
+MMTT (Multi-Mode Tactical Tracker) is a powerful, flexible, and intelligent system designed to track, analyze, and present tactical information in real time. It was built to address the challenges of fragmented data, slow analysis, and limited situational awareness, providing a unified platform that supports informed and timely decision-making.
